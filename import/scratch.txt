@@ -1,0 +1,86 @@
+<script>
+    
+$('.body-part').mouseenter(function() {
+$('.part-name').text("Hovering over: " + $(this).attr('part-name')); 
+});
+
+
+$('.body-part').mouseleave(function() {
+$('.part-name').text('No hovered part'); 
+});
+
+$(".body-part").click(function(event) {
+          $('.selected-part-name').text($(this).attr('part-name'));
+})
+
+ $(".body-part").click(function (event) {
+        // remove classes from all
+        $('.part').find('path').removeClass('override'); //line changed to remove back-Active from all
+        // add class to the one we clicked
+        $(this).find('.part').find('path').toggleClass("override"); //this line changed to add back-Active to only current element
+    });
+    
+ $(".reset-selection").click(function (event) {
+      $('.part').find('path').removeClass('override'); //line changed to remove back-Active from all
+                  $('.selected-part-name').text('Select a body part');  
+    });
+ 
+ $('#scale').keydown(function (e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        return false;
+    }
+});
+
+  $('.add-symptom').click(function() { 
+    var $this = $(this);
+    var scaleID = $this.closest('.symptom').attr('scale-id').toString();
+
+    setTimeout(function() { 
+         if(($this.closest('.form').siblings('.error-message').css('display')) == 'block'){
+             $this.closest('.symptom').addClass('click-override');
+             $("#symptoms-selected-div").prepend($('.symptoms-selected-text:first-child').clone().removeClass('test').text(($this.closest('.symptom').attr('related-part') + " : " + ($this.closest('.symptom').attr('symptom-name')) + " (" + document.getElementById(scaleID).value + ")")))
+             };
+    }, 500);
+    });
+
+  $('.symptoms-selected-text').click(function() { 
+    var $this = $(this);
+    var scaleID = $this.attr('scale-id').toString();
+    $("#symptoms-selected-div").remove($('.symptoms-selected-text:first-child').clone().removeClass('test').text(($this.closest('.symptom').attr('related-part') + " : " + ($this.closest('.symptom').attr('symptom-name')) + " (" + document.getElementById(scaleID).value + ")")))
+    });
+
+
+
+</script>
+
+
+zd
+
+
+              <a href="physical-checkup.html" class="delete w-inline-block w--current"><img src="images/3668837.png" loading="lazy" width="20" height="20" alt="" class="back-icon">
+          <div class="delete-entry-text">Start over</div>
+        </a>
+
+-----------------------------------------
+
+      <a href="../homepage.html" class="nav-buttons w-inline-block"><img src="images/home.png" loading="lazy" width="25" height="25" alt="" class="icon">
+        <div class="tab-label">Home</div>
+      </a>
+     <a href="physical-checkup.html" aria-current="page" class="nav-buttons w-inline-block w--current"><img src="images/checkup.png" loading="lazy" width="25" height="25" alt="" class="icon current">
+        <div class="tab-label">Checkup</div>
+      </a>
+      <a href="../goals.html" class="nav-buttons w-inline-block"><img src="images/goals.png" loading="lazy" width="25" height="25" alt="" class="icon">
+        <div class="tab-label">Goals</div>
+      </a>
+      <a href="../insight.html" class="nav-buttons w-inline-block"><img src="images/insight.png" loading="lazy" width="25" height="25" alt="" class="icon">
+        <div class="tab-label">Insights</div>
+      </a>
+     
+      <a href="../profile.html" class="nav-buttons w-inline-block last"><img src="images/profile.png" loading="lazy" width="25" height="25" alt="" class="icon">
+        <div class="tab-label">Log History</div>
+      </a>
+
+      <a href="physical-checkup.html" class="delete w-inline-block w--current"><img src="images/3668837.png" loading="lazy" width="20" height="20" alt="" class="back-icon">
+          <div class="delete-entry-text">Start over</div>
+      </a>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A description of the page and its contents" />
+
+  <link rel="stylesheet" href="style.css" />
+  <title>Homepage</title>
+</head>
+<br>
+<body style="background:#f0effa;display: grid;" >
+	
+    <div class = "contentwrap">
+	<div class = "wrapper" id = "profileinfo">
+		<div class ="profile">
+			<div class = "username">Hi, Matthew</div>
+			
+		</div>
+
+	</div>
+	<div class = profilepic>
+			<img class = "logo" src="matthew.png" width = "60px">
+		</div>
+</div>
+<div id = "column">
+	<div class = "contentwrap" id = "tab1">
+	<div class = "contentwrap">
+	<div class = "wrapper" id = "checkup">
+		<label class = "profilename" style="color: #9251F7;">Check up</label>
+		
+
+		<label class = "title" width="100%">How do you feel today?</label>
+		
+		<br>
+		<label class = "summary" style = "margin-top: 5px"> "The human body has been designed <br> to resist an infinite number of changes <br> and attacks brought about by its <br> environment. The secret of good <br> health lies in successful adjustment <br> to changing stresses on the body.” <br> – Harry J. Johnson</label>
+		<br>
+		<br>
+		<div class= "multi-selector">
+		<div class = "select-field">
+			<label class = "summary" style = "color:#9251F7">Your most recent entries</label>
+				 </div>
+			<!---------List of checkboxes and options----------->
+				 <div class = "list" style = "height: 200px;">
+				   <label class = "title"></label>
+			
+			
+				<label  class = "task" onclick = "location.href ='profile.html';"style = "padding-top:8px; padding-bottom:8px">
+						November 9th 2021
+						<label class = "type-of-log">
+							mental
+						</label>
+				</label>
+			
+				<label  class = "task" onclick = "location.href ='profile.html';" style = "padding-top:8px; padding-bottom:8px">
+						November 8th 2021
+						<label class ="type-of-log">
+							physical
+						</label>
+				</label>
+			
+				<label  class = "task" onclick = "location.href ='profile.html';" style = "padding-top:8px; padding-bottom:8px">
+						November 6th 2021
+						<label class = "type-of-log">
+							physical
+						</label>
+				</label>
+				 <label  class = "task" onclick = "location.href ='profile.html';" style = "padding-top:8px; padding-bottom:8px">
+						November 7th 2021
+						<label class = "type-of-log">
+							physical
+						</label>
+				</label>
+				<label  class = "task" onclick = "location.href ='profile.html';" style = "padding-top:8px; padding-bottom:8px">
+					November 6th 2021
+					<label class = "type-of-log">
+						physical
+					</label>
+			</label>
+				 
+			</div>
+		</div>
+		
+		<a class= "gradient-button gradient-button-2" onclick = "location.href='import/checkup.html';" id="log">Log your symptoms</a><br/>
+
+		<div class = "avatar">
+			<img class="logo" src="avatar.png" width = "120px">
+		</div>
+	</div>
+</div>
+	
+</div>
+	
+	<div class="contentwrap" id = "tab2">
+	<div class = "wrapper" id = "goals">
+		<label class = "profilename" style="color:#f05c00;">Goals overview</label>
+		<label class = "title">You have 3 active goals</label><br>
+		
+		<div class = "goalstab">
+			<div class="progress-circle-container">
+				<div class = "mini">
+				<div class="progress-circle progress-1"><span>10</span></div> 
+				<label class = "summary">Sleep</label>
+			</div>
+			</div>
+			<div class="progress-circle-container">
+				<div class = "mini">
+				<div class="progress-circle progress-2"><span>30</span></div> 
+				<label class = "summary">Activity</label>
+			</div>
+			</div>
+			<div class="progress-circle-container">
+				<div class = "mini">
+				<div class="progress-circle progress-3"><span>50</span></div> 
+				<label class = "summary">Diet</label>
+			</div>
+			</div>
+			</div>
+			
+		</div>
+		<div class = "wrapper" id = "insights">
+			<label class = "profilename" style="color: #019055;">Featured insight</label>
+			<label class = "title" width="100%">Positive correlation between exercise and sleep</label>
+			<br>
+			<div class = "insight-home">
+				<div class = "illu">
+					<img  class = "pic"src="up.png" width="30px" height="30px">
+				</div>
+				<div class = "illu">
+					<img  class = "pic"src="sleep1.png" width="30px" height="30px">
+				</div>
+				
+				<div class = "para">
+				<label class = "title">Sleep</label>
+				<label class = "summary">+10% - 1.5hr</label>
+				 </div>
+				 <div class = "diagram">
+			                 <img class = "profilepic" src = "chart2.png" width = "100px"> 
+				 </div>
+			</div>
+			<hr>
+			<div class = "insight-home">
+				<div class = "illu">
+					<img  class = "pic"src="up.png" width="30px" height="30px">
+				</div>
+				<div class = "illu">
+					<img  class = "pic"src="fitness.png" width="30px" height="30px">
+				</div>
+				<div class = "para">
+				<label class = "title">Exercise</label>
+				<label class = "summary">+5% - 9min</label>
+			</div>
+				<div class = "diagram">
+					<img class = "profilepic" src = "chart2.png" width = "100px"> 
+				 </div>
+			</div>
+			
+		</div>
+    
+	</div>
+</div>
+	
+	
+	
+</div>
+<div class = "contentwrap">
+		<div class = "nav-home">
+			<div class="buttonactive">
+				<div class = "icon"><img src="home.png" width = "30px"></div>
+				<label>Home</label>
+		    </div>
+			<div class="button" onclick = "location.href='import/checkup.html';">
+				<div class = "icon"><img src="checkup.png" width = "30px"></div>
+				<label>Checkup</label>
+			</div>
+			<div class="button" onclick = "location.href='import/goals.html';">
+				<div class = "icon"><img src="goals.png" width = "30px" ></div>
+				<label>Goals</label>
+			</div>
+			<div class="button" onclick = "location.href='insight.html';">
+				<div class = "icon"><img src="insight.png" width = "30px"></div>
+				<label>Insight</label>
+			</div>
+			
+			<div class="button last" onclick = "location.href='profile.html';">
+				<div class = "icon"><img src="profile.png" width = "30px"></div>
+				<label>Log History</label>
+			</div>
+		</div>
+	</div>
+    <script>
+
+    </script>
+</body>
+</html>

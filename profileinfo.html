@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="A description of the page and its contents"
+        />
+    
+        <link rel="stylesheet" href="style.css" />
+        <title>Profile information</title>
+    </head>
+    <body>
+        <div class = "wrapper">
+        <div width = "50%" style="text-align:left;color: blue" onclick="backButton()">
+          < Back
+        </div>
+      </div>
+      <div class="wrapper">
+         <ul class="progressbar">
+          <li class="active" id="l-1">Profile Information</li>
+        <li  id="l-2">Medical information</li>
+        <li  id="l-3">Add <br> contacts</li>
+      </ul>
+    </div>
+    <div class = "wrapper">
+        <div class = "mycontent" id = "myslide">
+            <div class="writeup">
+            <label class = "title">Personal Information</label>
+            <label class = "summary">Please fill out the fields below to help us personalize your experience</label>
+            
+            <div class = "form-container">
+              <div class="form-inner">
+               <form action="#" class="signup">
+                <div class="field">
+                     <div class = fieldname>
+                       <label class = "summary">Name</label>
+                     </div>
+                     
+                     <input type="text" placeholder="Name" required>
+                </div>
+                <div class="field">
+                     <div class = fieldname>
+                       <label class = "summary">Age</label>
+                     </div>
+                     <input type="number" placeholder="Age" required style="width:65%;" id = "Age">
+                     <div class = "ageselect">
+                       <li id ="a+" class = "agelayer" onclick="addAge()"><label class = "prompt">+</label></li>
+                       <li id ="a-"  class = "agelayer" onclick="subtractAge()"><label class = "prompt">-</label></li>
+                     </div>
+                </div>
+                <div class="field">
+                     <div class = fieldname>
+                       <label class = "summary">Gender</label>
+                     </div>
+                     <div class = "genderselect">
+                       <li id ="m-1" onclick="male()" class = "activelayer"><label>Male</label></li>
+                       <li id ="f-1" onclick="female()" class = "genderlayer"><label>Female</label></li>
+                       <li id ="o-1" onclick="other()"class = "genderlayer"><label>Other</label></li>
+                     </div>
+                </div>
+                <div class="field">
+                     <div class = fieldname>
+                       <label class = "summary">Height(m)</label>
+                     </div>
+                     <input type="number" placeholder="475" required id = "weight">
+                </div>
+                <div class="field">
+                     <div class = fieldname>
+                       <label class = "summary">Weight(kg)</label>
+                     </div>
+                     <input type="number" placeholder="85" required id = "height">
+                </div>
+                <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Proceed"onclick ="proceed()">
+                </div>
+               </form>
+              </div>
+            </div>
+          </div>
+          <div class = "writeup">
+            <label class = "title">Medical Information</label>
+              <label class = "summary">Please select any pre-existing medical conditions,chronic ilnesses and allergies that you may have</label>
+                <div class="multi-selector">
+
+     <div class="select-field">
+<input type="text" name="" placeholder="Select all illnesses that apply" id="" class="input-selector">
+     <span class="down-arrow"></span>
+     </div>
+<!-----------------------------------------List of checkboxes and options----------------------------------------------->
+     <div class="list" style="overflow-y:scroll;height: 150px; ">
+      <!-----------------------------A-----------------------------> 
+      <label class="title">A</label>
+       <label id="0" class="task" onclick = "select(this.id);">
+        Allergies  
+    </label>
+      <label id="1" class="task" onclick = "select(this.id);">  
+        Anexiety  
+      </label>
+       <label id="2" class="task" onclick = "select(this.id);">
+           Arthiritis
+     </label>
+       <label id="3" class="task" onclick = "select(this.id);">
+            Asthma
+     </label>
+      <!-----------------------------B-----------------------------> 
+     <label class="title">B</label>
+           <label id="4" class="task" onclick = "select(this.id);">
+           Binge Eating
+     </label>
+       <label id="5" class="task" onclick = "select(this.id);">
+            Breast Cancer
+     </label>
+       <label id="6" class="task" onclick = "select(this.id);">
+            Bulimia  
+     </label>
+
+     <!-----------------------------C-----------------------------> 
+     <label class="title">C</label>
+           <label id="7" class="task" onclick = "select(this.id);">
+           Chest Pain
+     </label>
+       <label id="8" class="task" onclick = "select(this.id);">
+            Chlamydia
+     </label>
+       <label id="9" class="task" onclick = "select(this.id);">
+            Chronic Fatigue Syndrome  
+     </label>
+        <label id="10" class="task" onclick = "select(this.id);">
+            Chronic Kidney Disease
+      </label>
+            <label id="11" class="task" onclick = "select(this.id);">
+                Common Cold
+          </label>
+
+          <label id="12" class="task" onclick = "select(this.id);">
+            Common Heart Conditions
+      </label>
+        <label id="13" class="task" onclick = "select(this.id);">
+             Constipation
+      </label>
+      <label id="14" class="task" onclick = "select(this.id);">
+        Cough
+  </label>
+    <label id="15" class="task" onclick = "select(this.id);">
+         Cystic Fibrosis
+  </label>
+
+<!-----------------------------D-----------------------------> 
+     <label class="title">D</label>
+           <label id="16" class="task" onclick = "select(this.id);">
+           Dehydration
+     </label>
+       <label id="17" class="task" onclick = "select(this.id);">
+            Dementia
+     </label>
+       <label id="18" class="task" onclick = "select(this.id);">
+            Depression 
+     </label>
+        <label id="19" class="task" onclick = "select(this.id);">
+            Diarrhoea
+      </label>
+            <label id="20" class="task" onclick = "select(this.id);">
+                Dry Mouth
+          </label>
+    <!-----------------------------E-----------------------------> 
+    <label class="title">E</label>
+      <label id="21" class="task" onclick = "select(this.id);">
+        Earache
+      </label>
+      <label id="22" class="task" onclick = "select(this.id);">
+        Earwax Build-up
+      </label>
+
+      <!-----------------------------F-----------------------------> 
+    <label class="title">F</label>
+    <label id="23" class="task" onclick = "select(this.id);">
+      Fever
+    </label>
+    <label id="24" class="task" onclick = "select(this.id);">
+      Food Poisoning
+    </label>
+
+    <!-----------------------------H-----------------------------> 
+    <label class="title">H</label>
+    <label id="25" class="task" onclick = "select(this.id);">
+    Headaches
+</label>
+<label id="26" class="task" onclick = "select(this.id);">
+     High Blood Pressure
+</label>
+<label id="27" class="task" onclick = "select(this.id);">
+     High Cholestrol
+</label>
+ <label id="28" class="task" onclick = "select(this.id);">
+     Hyperglycaemia (High blood sugar)
+</label>
+     <label id="29" class="task" onclick = "select(this.id);">
+         Hypoglycaemia (Low blood sugar)
+   </label>
+
+       <!-----------------------------I-----------------------------> 
+       <label class="title">I</label>
+       <label id="30" class="task" onclick = "select(this.id);">
+         Insomnia
+       </label>
+       <label id="31" class="task" onclick = "select(this.id);">
+         Iron Deficiency Anemia
+       </label>
+
+      <!-----------------------------K-----------------------------> 
+       <label class="title">K</label>
+       <label id="32" class="task" onclick = "select(this.id);">
+         Kidney Infection
+       </label>
+       <label id="33" class="task" onclick = "select(this.id);">
+         Kidney Stones
+       </label>
+
+
+       <!-----------------------------L-----------------------------> 
+    <label class="title">L</label>
+    <label id="34" class="task" onclick = "select(this.id);">
+    Lactose Intolerance
+</label>
+<label id="34" class="task" onclick = "select(this.id);">
+     Leg Cramps
+</label>
+<label id="35" class="task" onclick = "select(this.id);">
+     Liver Disease
+</label>
+
+     <!-----------------------------M-----------------------------> 
+     <label class="title">M</label>
+           <label id="36" class="task" onclick = "select(this.id);">
+           Menopause
+     </label>
+       <label id="37" class="task" onclick = "select(this.id);">
+            Middle Ear Infection
+     </label>
+       <label id="38" class="task" onclick = "select(this.id);">
+            Migraine  
+     </label>
+    
+     <!-----------------------------N-----------------------------> 
+     <label class="title">N</label>
+           <label id="39" class="task" onclick = "select(this.id);">
+           Nosebleed
+     </label>
+
+
+     
+    <!-----------------------------O-----------------------------> 
+    <label class="title">O</label>
+    <label id="40" class="task" onclick = "select(this.id);">
+    Obesity
+</label>
+<label id="41" class="task" onclick = "select(this.id);">
+     Obsessive Compulsive Disorder (OCD)
+</label>
+
+<!-----------------------------S-----------------------------> 
+<label class="title">S</label>
+<label id="42" class="task" onclick = "select(this.id);">
+Shortness of Breath
+</label>
+<label id="43" class="task" onclick = "select(this.id);">
+ Sore Throat
+</label>
+<label id="44" class="task" onclick = "select(this.id);">
+ Stomach Ache
+</label>
+    <!-----------------------------T-----------------------------> 
+     <label class="title">T</label>
+           <label id="45" class="task" onclick = "select(this.id);">
+           Type I Diabetes
+     </label>
+       <label id="46" class="task" onclick = "select(this.id);">
+            Type II Diabetes
+     </label>
+      
+     </div>
+      <label class ="summary">Selected:</label>
+     <div id = "mylist"class = "illnesslist"  style="height: 120px;overflow-y: scroll">
+       
+     </div>
+      <div class ="controls">
+        <a class="gradient-button gradient-button-2" href ="#" onclick="proceed2()">Proceed</a><br />
+      </div>
+
+    </div>
+          </div>
+          <div class = "writeup">
+            <label class = "title">Add Contacts</label>
+              <label class = "summary">You can add your doctors information to send them reports through the app</label>
+               <div class = "form-container">
+                    <div class="form-inner">
+                        <form action="#" class="signup" >
+                            <div class = "fieldname">
+                                <label class = "summary">Doctor Name</label>
+                            </div>
+                            <div class="field">
+                                 <input type="text" placeholder="Full Name" id = "docname">
+                            </div>
+                            <div class = "fieldname">
+                                <label class = "summary">Doctor Email</label>
+                            </div>
+                            <div class="field">
+                                 <input type="text" placeholder="email@email.com"id = "docem" style="width:100%;">
+                            </div>
+                            <div class = "fieldname" style = "width:250px;">
+                                 <label class = "summary">Doctor Phone Number</label>
+                             </div>   
+                            <div class="field">
+                                 <input type="number" placeholder="+1204234567" id ="docnum">
+                            </div>
+                             <a onclick = "refresh()" >Add another contact </a>
+                        </form>
+                     </div>
+              </div>
+              <a href = "homepage.html">Skip</a>
+              <a class="gradient-button gradient-button-2" href ="homepage.html" style = "width:100%;">Proceed</a><br />
+          </div>
+        </div>
+    </div>
+    <script>
+     var ilnesses  = ["Allergies","Anxiety","Athritis","Asthma","Binge Eating","Breast Cancer","Bulimia","Chest Pain",
+                     "Chlamydia","Chronic Fatigue Syndrome","Chronic Kidney Disease","Common Cold","Common Heart Conditions","Constipation"," Cough","Cystic Fibrosis","Dehydration","Dementia","Depression","Diarrhoea"," Dry Mouth","Earache","Earwax Build-up","Fever","Food Poisoning","Headaches","High Blood Pressure","High Cholestrol","Hyperglycaemia (High blood sugar)",
+                     "Hypoglycaemia (Low blood sugar)","Insomnia","Iron Deficiency Anemia","Kidney Infection","Kidney Stones","Lactose Intolerance","Leg Cramps","Liver Disease"," Menopause","Middle Ear Infection","Migraine","Nosebleed","Obesity","Obsessive Compulsive Disorder (OCD)","Shortness of Breath","Sore Throat","Stomach Ache","Type I Diabetes","Type II Diabetes"];
+     var myilnesses = [];
+     document.querySelector('.select-field').addEventListener('click',()=>{
+         document.querySelector('.list').classList.toggle('show');
+         
+
+     });
+     
+      var slider = document.getElementById("myslide");
+      var list = document.getElementById("mylist");
+      var m1 = document.getElementById("m-1");
+       var docname = document.getElementById("docname");
+       var docem = document.getElementById("docem");
+       var docnum = document.getElementById("docnum");
+      var aplus = document.getElementById("a+");
+      var age = document.getElementById("Age");
+      var name = document.getElementById("name");
+      var height = document.getElementById("height");
+      var weight = document.getElementById("Age");
+      var aminus = document.getElementById("a-");
+      var f1 = document.getElementById("f-1");
+      var o1 = document.getElementById("o-1");
+      var l1 = document.getElementById("l-1");
+      var l2 = document.getElementById("l-2");
+      var l3 = document.getElementById("l-3");
+      function male(){
+             m1.className ="activelayer";
+             f1.className = "genderlayer";
+             o1.className = "genderlayer";
+      }
+    function female(){
+              m1.className ="genderlayer";
+             f1.className = "activelayer";
+             o1.className = "genderlayer";
+    }
+    function other(){
+             o1.className = "activelayer";
+             f1.className = "genderlayer";
+             m1.className = "genderlayer";
+    }
+    function addAge() {
+          aplus.className = "activelayer";
+          aminus.className = "agelayer";
+          var a;
+          if (Age.value==""){a = 0;}
+          else{ a = parseInt(Age.value);}
+          
+          Age.value = a+1;
+    }
+    function subtractAge() {
+          aminus.className = "activelayer";
+          aplus.className = "agelayer";
+          var a;
+          if (Age.value==""){a = 0;}
+          else{ a = parseInt(Age.value);}
+          if(a<1){
+             aminus.className = "agelayer";
+          }
+          else{
+          Age.value = a-1;}
+
+    }
+    function backButton(){
+      if (slider.style.marginLeft =="-100%"){
+        slider.style.marginLeft ="0";
+        l2.className ="";
+        l3.className ="";
+      }else if(slider.style.marginLeft =="-200%"){
+               slider.style.marginLeft ="-100%";
+               l2.className = "active" ;
+               l3.className ="";
+      }else{
+        window.location.href='signup.html?#';
+      }
+    }
+    function proceed(){
+        if(height.value!="" && age.value!="" && name.value!="" && weight.value!=""){
+            slider.style.marginLeft ="-100%";
+             l2.className = "active";
+              l3.className = "";
+        }
+    }
+    function proceed2(){
+        slider.style.marginLeft ="-200%";
+        l3.className = "active";
+    }
+    function back1(){
+    slider.style.marginLeft ="0";
+    l2.className ="";
+    l3.className="";
+  }
+    function refresh(){
+                   docname.value = "";
+                   docem.value = "";
+                   docnum.value = "";
+    }
+    function select(val){
+           var item = document.getElementById(val);
+           if(item.className == "task"){
+                item.className = "selected";
+                myilnesses.push(ilnesses[val])
+                list.innerHTML= "";
+                for (a in myilnesses)
+                {
+                  list.innerHTML += myilnesses[a] + "<br>";
+                }
+               
+           }else{
+               item.className = "task";
+               for( a in myilnesses){
+                if(myilnesses[a] == ilnesses[val]){break;}
+               }
+               myilnesses.splice(a,1);
+               list.innerHTML= "";
+                for (a in myilnesses)
+                {
+                  list.innerHTML += myilnesses[a] + "<br>";
+                }
+
+           }
+  }
+    </script>
+    </body>
+
+   
+    </html>

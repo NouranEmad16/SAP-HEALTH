@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A description of the page and its contents" />
+
+  <link rel="stylesheet" href="style.css" />
+  <title>Profile</title>
+</head>
+
+<body style="background:#f0effa;display: grid;">
+
+	<div class = "contentwrap" style = "margin-top: 30px">
+	<div class = "wrapper" id = "profileinfo">
+
+		<div class = "profile">
+			<div class = "username">Your Log</div>
+		</div>
+
+	</div>
+
+		<div class = profilepic>
+			<img class = "logo" src="matthew.png" width = "60px">
+		</div>
+	</div>
+
+	<div class = contentwrap>
+	<div class = "wrapper" id = "checkup" style = "background-color:rgb(255, 255, 255); margin-right:15px">
+		<label class = "profilename" style="color: #9251F7;">Log history</label>
+		<label class = "title" width="100%">View all your log entries</label>
+		<br>
+		<label class = "summary"  style= "margin-top: 5px;">Review the most recent entries of your symptoms. Make sure they're up to date to gain new insights!</label>
+		<br> 
+		<br>
+
+		<html>
+		<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<style>
+			* {
+			  box-sizing: border-box;
+			}
+			
+			body {
+			  font: 16px Arial;  
+			  color: black;
+			}
+			
+			/*the container must be positioned relative:*/
+			.autocomplete {
+			  position: relative;
+			  display: inline-block;
+			}
+			
+			input {
+			  border: 1px solid transparent;
+			  background-color: #f1f1f1;
+			  padding: 10px;
+			  font-size: 16px;
+			}
+			
+			input[type=text] {
+			background-color: #ffffff;
+			  width: 110%;
+			  border-radius: 10px;
+			}
+			
+			.autocomplete-items {
+			  position: absolute;
+			  border: 1px solid #d4d4d4;
+			  border-bottom: none;
+			  border-top: none;
+			  z-index: 99;
+			  /*position the autocomplete items to be the same width as the container:*/
+			  top: 100%;
+			  left: 0;
+			  right: 0;
+			}
+			
+			.autocomplete-items div {
+			  padding: 10px;
+			  cursor: pointer;
+			  background-color: #fff; 
+			  border-bottom: 1px solid #d4d4d4; 
+			}
+			
+
+			</style>
+			</head>     
+			<body>
+			
+			
+			<div class = log-history-container 
+			style = "background-color: #f6f6f7;
+			height: 343px;
+			width: 100%;
+			padding: 10px;
+			border-radius: 15px;
+			margin-bottom: 14px;
+			margin-top: -10px;">
+
+			<form autocomplete="off">
+			  <div class="autocomplete" style="width:382px;">
+				<input id="inputEntry" type="text" name="logHistory" placeholder="Search for any entry by date (ex. 06/05/21)" style = "border:0.5px solid #dadada;">
+			  </div>
+			</form>
+			
+			<script>
+			function autocomplete(inp, arr) {
+			  /*the autocomplete function takes two arguments,
+			  the text field element and an array of possible autocompleted values:*/
+			  var currentFocus;
+			  /*execute a function when someone writes in the text field:*/
+			  inp.addEventListener("input", function(e) {
+				  var a, b, i, val = this.value;
+				  /*close any already open lists of autocompleted values*/
+				  closeAllLists();
+				  if (!val) { return false;}
+				  currentFocus = -1;
+				  /*create a DIV element that will contain the items (values):*/
+				  a = document.createElement("DIV");
+				  a.setAttribute("id", this.id + "autocomplete-list");
+				  a.setAttribute("class", "autocomplete-items");
+				  /*append the DIV element as a child of the autocomplete container:*/
+				  this.parentNode.appendChild(a);
+				  /*for each item in the array...*/
+				  for (i = 0; i < arr.length; i++) {
+					/*check if the item starts with the same numbers as the text field value:*/
+					if (arr[i].substr(0, val.length) == val) {
+					  /*create a DIV element for each matching element:*/
+					  b = document.createElement("DIV");
+					  /*make the matching letters bold:*/
+					  b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+					  b.innerHTML += arr[i].substr(val.length);
+					  /*insert a input field that will hold the current array item's value:*/
+					  b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+					  a.appendChild(b);
+					}
+				  }
+			  });
+			  
+
+			
+			  function closeAllLists(elmnt) {
+				/*close all autocomplete lists in the document,
+				except the one passed as an argument:*/
+				var x = document.getElementsByClassName("autocomplete-items");
+				for (var i = 0; i < x.length; i++) {
+				  if (elmnt != x[i] && elmnt != inp) {
+					x[i].parentNode.removeChild(x[i]);
+				  }
+				}
+			  }	
+
+			  /*execute a function when someone clicks in the document:*/
+  			  document.addEventListener("click", function (e) {
+      		  closeAllLists(e.target);
+  			});
+			}
+
+
+			
+			var entries = ["12/04/20 - diarrhea, nausea, vomiting", 
+			"01/13/21 - stress, headaches", 
+			"02/18/21 - cramps, aches", 
+			"03/23/21 - dehydration, weakness", 
+			"04/15/21 - stomachache", 
+			"05/11/21 - stress, depression, fatigue", 
+			"06/05/21 - back pain", 
+			"06/10/21 - back pain, achiness", 
+			"06/18/21 - eye strain, fatigue", 
+			"06/24/21 - eye strain, headaches", 
+			"07/01/21 - flu symptoms", 
+			"07/09/21 - stomachache", 
+			"07/20/21 - sore throat, common cold", 
+			"07/29/21 - stress, headaches", 
+			"08/08/21 - depression", 
+			"08/19/21 - nausea", 
+			"09/01/21 - headaches, depression, difficulty focusing", 
+			"09/09/21 - nausea, flu symptoms", 
+			"09/25/21 - headaches, difficulty focusing",
+			"10/03/21 - stomachache, nausea and flu symptoms",
+			"10/12/21 - weakness, achiness", 
+			"10/20/21 - difficulty breathing", 
+			"11/01/21 - stress, neck pain, anxiety", 
+			"11/02/21 - stress", 
+			"11/03/21 - stress and neck pain", 
+			"11/04/21 - weakness"
+		];
+			
+			
+			autocomplete(document.getElementById("inputEntry"), entries);
+			</script>
+			
+			</body>
+			</html>
+
+		<div class= "multi-selector">
+		<div class = "select-field" style = "background-color: transparent;">
+				 </div>
+			<!---------List of checkboxes and options----------->
+				 <div class = "list" style = "overflow-y:scroll;height: 256px;margin-bottom: 19px;background-color: transparent;margin-top: -1px;">
+				   <label class = "title" style = "background-color: transparent;"></label>
+			
+				   <label id = "1" class = "task" onclick = "select(this.id);" style = "display: flex;padding: 8px;justify-content: space-between;align-content: center;align-items: center;">
+						November 4th 2021 
+						<label class = "type-of-log" style = "margin-left: 0px;">
+							physical
+						</label>
+				</label>
+			
+				  <label id = "2" class = "task" onclick = "select(this.id);" style = "display: flex;padding: 8px;justify-content: space-between;align-content: center;align-items: center;">  
+						November 3rd 2021
+						<label class = "type-of-log" style = "margin-left: 0px;">
+							mental
+						</label>
+				  </label>
+			
+				   <label id = "3" class = "task" onclick = "select(this.id);" style = "display: flex;padding: 8px;justify-content: space-between;align-content: center;align-items: center;">
+						November 2nd 2021  
+						<label class = "type-of-log" style = "margin-left: 0px;">
+							mental
+						</label>
+				 	</label>
+			
+				
+					 <label id = "4" class = "task" onclick = "select(this.id);" style = "display: flex;padding: 8px;justify-content: space-between;align-content: center;align-items: center;">
+						November 1st 2021
+						<label class = "type-of-log" style = "margin-left: 0px;">
+							mental
+						</label>
+				 	</label>
+			
+				   <label id = "5" class = "task" onclick = "select(this.id);" style = "display: flex;padding: 8px;justify-content: space-between;align-content: center;align-items: center;">
+						October 20th 2021
+						<label class = "type-of-log" style = "margin-left: 0px;">
+							physical
+						</label>
+				 </label>
+			
+				 <label id = "6" class = "task" onclick = "select(this.id);" style = "display: flex;padding: 8px;justify-content: space-between;align-content: center;align-items: center;">
+						October 12th 2021
+						<label class = "type-of-log" style = "margin-left: 0px;">
+							physical
+						</label>
+				 </label>
+			
+				 <label id = "7" class = "task" onclick = "select(this.id);" style = "display: flex;padding: 8px;justify-content: space-between;align-content: center;align-items: center;">
+						October 3rd 2021
+						<label class = "type-of-log" style = "margin-left: 0px;">
+							physical
+						</label>
+				</label>
+			
+				<label id = "8" class = "task" onclick = "select(this.id);" style = "display: flex;padding: 8px;justify-content: space-between;align-content: center;align-items: center;">
+						September 25th 2021
+						<label class = "type-of-log" style = "margin-left: 0px;">
+							physical
+						</label>
+				</label>
+			
+				<label id = "9" class = "task" onclick = "select(this.id);" style = "display: flex;padding: 8px;justify-content: space-between;align-content: center;align-items: center; ">
+						September 9th 2021
+						<label class = "type-of-log" style = "margin-left: 0px;">
+							physical
+						</label>
+				</label>
+			
+				<label id = "10" class = "task" onclick = "select(this.id);" style = "display: flex;padding: 8px;justify-content: space-between;align-content: center;align-items: center;">
+						September 1st 2021
+						<label class = "type-of-log" style = "margin-left: 0px;">
+							physical
+						</label>
+				</label>
+				 
+			</div>
+		</div>
+	</div>
+		<label class = "summary" style="color:rgb(241, 93, 7); position:relative; top:3px; left:69.5px; font-size:15px;">You logged for 4 days in a row! Keep it up!</label>
+		<a class= "gradient-button gradient-button-2" onclick = "location.href='import/checkup.html';" id="log">Log your symptoms</a><br/>
+
+
+		<div class = "avatar" style = "top:500px; left:25px">
+			<img class="logo" src="fire.gif" width = "30px">
+		</div> 
+
+		<div class = "avatar" style = "top:500px; left:460px">
+			<img class="logo" src="fire.gif" width = "30px">
+		</div> 
+	</div>
+
+	
+	<div class = "contentwrap" id = tab2>
+
+		<div class = "wrapper" id = "goals" style = "top:-11px">
+			<label class = "profilename" style="color: #019055;">Details</label>
+        	<label class = "title">Entry Information</label>
+			<br>
+			<br>
+			<div class="empty-insight-history" id="empty-div" style = "height:158px; display:block;">
+				<div class="emptyemoji" style = "padding: 9px;">👈🏼</div>
+				<div class="emptytext">Select a log entry to view its details</div>
+			</div>
+			<div id = "entry-info" class = "symptoms-selected-div-block" style = "display:none;">
+				<p id = "entry-info-text" class = "symptoms-selected-text test"> </p>
+			</div>
+        </div>
+
+		<div class = "wrapper" id = "goals" style = "top:16px">
+			<label class = "profilename" style="color: #f05c00;">Insights</label>
+			<label class = "title">View key insights and trends</label>
+			<br>
+			<br>
+
+			<div class = "goalstab" style = "margin-top: -19px;">
+				<div class = "mini"  style = "text-align: left; line-height:21px">
+					<img class="pic" src="headache.png" width="35px" height="35px" style="margin-bottom: 10px; margin-top: -1px;">
+					<label class = "summary">
+						Your poor focus is correlated with headaches
+					</label>
+			    </div>
+
+				<div class = "mini" style = "text-align: left; line-height:21px">
+					<img class="pic" src="nausea1.png" width="35px" height="35px" style="margin-bottom: 10px; margin-top: -1px;">
+					<label class = "summary">
+						You've reported nausea 20% more this week
+					</label>
+			   </div>
+
+				<div class = "mini" style = "text-align: left; line-height:21px">
+					<img class="pic" src="stress.png" width="35px" height="35px" style="margin-bottom: 10px; margin-top: -1px;">
+					<label class = "summary">
+						Neck pain is correlated with stress
+					</label>
+			    </div>
+			</div>
+			
+
+			<a class= "gradient-button gradient-button-2" onclick = "location.href='insight.html';" id="log">View more insights</a><br/>
+		</div>
+	</div>
+</div>
+
+
+	<div class = "contentwrap">
+		<div class = "nav" style="margin-top: 15px;margin-left: 0px;">
+			<div class="button" onclick = "location.href='homepage.html';">
+				<div class = "icon"><img src="home.png" width = "30px"></div>
+				<label>Home</label>
+		    </div>
+			<div class="button" onclick = "location.href='import/checkup.html';">
+				<div class = "icon"><img src="checkup.png" width = "30px"></div>
+				<label>Checkup</label>
+			</div>
+			<div class="button" onclick = "location.href='import/goals.html';">
+				<div class = "icon"><img src="goals.png" width = "30px" ></div>
+				<label>Goals</label>
+			</div>
+			<div class="button" onclick = "location.href='insight.html';">
+				<div class = "icon"><img src="insight.png" width = "30px"></div>
+				<label>Insight</label>
+			</div>
+			
+			<div class="buttonactive last">
+				<div class = "icon"><img src="profile.png" width = "30px"></div>
+				<label>Log History</label>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script>
+		var ilnesses  = ["Allergies","Anxiety","Athritis","Asthma","Binge Eating","Breast Cancer","Bulimia","Chest Pain"];
+		var myilnesses = [];
+
+		document.querySelector('.select-field').addEventListener('click',()=>{
+			document.querySelector('.list').classList.toggle('show');	
+		});
+		
+
+		var selected = false;
+		var id = 0;
+
+		var entryContent = [
+				"head: ache (8) <br> body: sleepiness (10) <br> feeling: finding it difficult to focus (8)",
+				"body: nausea (9) <br> body: fever: (7)",
+				"head: throbbing pain (10) <br> mental: mind racing (8)",
+				"abdomen: stomach pain (6) <br> body: nausea (4) <br> body: fever (6)",
+				"body: muscle weakness (5) <br> body: mutliple stiff joints (7)",
+				"chest: trouble breathing (8)",
+				"feeling: stressed (7) <br> body: inability to sleep (9) <br> neck: pain (10) <br> mental: decreased energy (6) <br> feeling: on edge (6)",
+				"feeling: stressed (8) <br> feeling: defeated (9) <br> feeling: appetite change (6)",
+				"feeling: stressed (5) <br> neck: pain (8) <br> feeling: sad (7)",
+				"body: muscle weakness (7)"
+			];
+
+
+	   function refresh()
+	   {
+			docname.value = "";
+			docem.value = "";
+			docnum.value = "";
+	   }
+
+
+
+		function select(val)
+	   {
+			var entryInfo = document.getElementById("entry-info-text");
+			entryInfo.innerHTML = entryContent[entryContent.length - val];
+			
+			entryInfo.classList.remove("test");
+
+			var hideDiv = document.getElementById("empty-div");
+			var showDiv = document.getElementById("entry-info");
+
+			hideDiv.style.display = "none";
+			showDiv.style.display = "block"; 
+
+			var item = document.getElementById(val);
+
+
+			if(!selected)
+			{
+				if(id != 0)
+				{
+					document.getElementById(id).className = "task";
+				}
+
+				id = val;
+				selected = true;
+
+				item.className = "selected";
+
+				myilnesses.push(ilnesses[val])
+			}
+			  
+			else
+			{
+				if(val == id)
+				{
+					selected = false;
+
+					item.clasName = "task";
+				}
+
+				else
+				{
+					document.getElementById(id).className = "task";
+					id = val;
+
+					item.className = "selected";
+
+					myilnesses.push(ilnesses[val])
+				}
+
+
+				for( a in myilnesses)
+				{
+					if(myilnesses[a] == ilnesses[val])
+					{
+						break;
+					}
+				}
+
+				myilnesses.splice(a,1);
+			}
+
+
+			list.innerHTML= "";
+
+			for (a in myilnesses)
+			{
+				list.innerHTML += myilnesses[a] + "<br>";
+			}
+	    }
+
+	</script>
+</body>
+</html>
